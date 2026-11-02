@@ -1,11 +1,8 @@
 const express = require('express');
-const { Pool } = require('pg');
 const OpenAI = require('openai');
 
-// إعداد اتصال Neon (هنا ضع رابط اتصالك مباشرة)
-const pool = new Pool({
-  connectionString: 'postgresql://neondb_owner:npg_ipt7Uunohx4V@ep-jolly-leaf-ab97q52m-pooler.eu-west-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
-});
+// الاتصال بقاعدة البيانات بيجي من متغير البيئة DATABASE_URL (شوف src/db.js)
+const pool = require('./db');
 
 // إعداد OpenAI API
 const openai = new OpenAI({
