@@ -1,7 +1,7 @@
 const { Client } = require('pg');
+// التشفير بيتحدد من ?sslmode=require في DATABASE_URL (شوف src/db.js)
 const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false }
+  connectionString: process.env.DATABASE_URL
 });
 (async () => {
   try {
